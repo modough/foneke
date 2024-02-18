@@ -1,0 +1,29 @@
+.legales {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 150px 400px 50px;
+}
+
+.legales-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1600px) {
+  .legales {
+    padding: 150px 250px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .legales {
+    padding: 150px 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .legales {
+    padding: 150px 50px;
+  }
+}

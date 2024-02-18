@@ -1,0 +1,88 @@
+.about {
+  padding: 200px 0;
+}
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin: 0 400px;
+}
+.about-wrapper .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.about-wrapper .title h2 {
+  font-size: 36px;
+  color: var(--orange);
+}
+
+.missionDiv {
+  display: flex;
+  flex-direction: row;
+
+  gap: 20px;
+}
+.mission-right,
+.mission-left {
+  flex: 1;
+}
+.mission-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+}
+.mission-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mission-right h3,
+.teamDiv h2 {
+  font-size: 25px;
+  color: var(--light-blue);
+  border-bottom: 1px solid var(--orange);
+}
+.mission-right h4 {
+  margin-top: 25px;
+  font-size: 36px;
+}
+.mission-steps {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.teamDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+}
+
+@media screen and (max-width: 1600px) {
+  .about-wrapper {
+    margin: 0 250px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .about-wrapper {
+    margin: 0 100px;
+  }
+  .missionDiv {
+    flex-direction: column;
+  }
+
+  .mission-left img {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .about-wrapper {
+    margin: 0 50px;
+  }
+}

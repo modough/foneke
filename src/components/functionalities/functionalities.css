@@ -1,0 +1,163 @@
+.functionalities {
+  padding: 200px 0;
+}
+.functionalities-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin: 0 400px;
+}
+.functionalities-wrapper .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.functionalities-wrapper .title h2 {
+  font-size: 36px;
+  color: var(--orange);
+}
+.functionalities-details {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 30px;
+}
+.details-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.accordion-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 10px;
+}
+.round {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.round-0 {
+  background-color: #fdebb6;
+}
+.round-1 {
+  background-color: #ffe5d7;
+}
+.round-2 {
+  background-color: #d3e6ff;
+}
+.round-3 {
+  background-color: #ecffd3;
+}
+.accordion.bg {
+  background-color: #f3faff;
+  border-radius: 10px;
+}
+button.titleBtn {
+  padding: 0;
+  all: unset;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 18px;
+}
+button.titleBtn:focus {
+  outline: revert;
+}
+.up,
+.down {
+  width: 15px;
+}
+.down {
+  rotate: 180deg;
+}
+
+.accordion-description {
+  margin: 20px 10px;
+  padding: 0 40px;
+  display: none;
+  animation: fade-out 2s;
+}
+.accordion-description .loginBtn {
+  margin-top: 20px;
+}
+.open {
+  display: block;
+  animation: fade-in 2s;
+}
+.details-left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3faff;
+  border-radius: 10px;
+  padding-top: 50px;
+}
+.functionalies-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+.functionalies-cards > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.functionalies-cards > div img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1600px) {
+  .functionalities-wrapper {
+    margin: 0 250px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .functionalities-wrapper {
+    margin: 0 100px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .functionalities-details {
+    flex-direction: column;
+  }
+  .details-right,
+  .details-left {
+    width: 100%;
+  }
+  .details-left img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .functionalities-wrapper {
+    margin: 0 50px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

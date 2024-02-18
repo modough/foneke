@@ -1,0 +1,230 @@
+.landingpage {
+  padding-top: 200px;
+}
+
+.landingpage-top,
+.landingpage-middle,
+.landingpage-middle-second,
+.landingpage-middle-third,
+.landingpage-middle-forth,
+.landingpage-middle-fifth {
+  margin: 0 400px;
+}
+
+.landingpage-top {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding: 50px 0;
+}
+.landing-right,
+.landing-left {
+  flex: 1;
+}
+.landing-left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.landing-left h2 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 127.5%;
+  letter-spacing: -0.01em;
+  color: #3e3e3e;
+}
+.landing-left p {
+  font-size: 18px;
+  line-height: 167%;
+  letter-spacing: -0.02em;
+}
+.landingpage-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.landingpage-middle h2 {
+  font-size: 36px;
+  padding: 0 200px;
+}
+.landing-cardDiv,
+.landingpage-middle-forth-cardDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.landingpage-middle-second,
+.landingpage-middle-third,
+.landingpage-middle-forth,
+.landingpage-middle-fifth {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding: 100px 20px;
+}
+.landingpage-middle-third {
+  flex-direction: row-reverse;
+}
+.landingpage-middle-forth {
+  flex-direction: column;
+  align-items: center;
+}
+
+.middle-left-top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid lightgrey;
+}
+.middle-left-top h2 {
+  font-size: 36px;
+}
+.middle-left-top span {
+  color: var(--light-blue);
+}
+.middle-left-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+}
+.middle-left-bottom li {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 10px;
+}
+.middle-left-bottom li span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.middle-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middle-right img {
+  border-radius: 10px;
+  box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -webkit-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -moz-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+}
+
+.middle-left.third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+}
+.middle-left.third h2,
+.middle-left.fourth h2 {
+  font-size: 36px;
+}
+.landingpage-middle-forth-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.middle-left-fifth {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.middle-right-fifth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middle-left-fifth h2 {
+  font-size: 36px;
+}
+.middle-left-fifth .loginBtn {
+  width: 20%;
+}
+.landingpage-middle-fifth {
+  flex-direction: column;
+}
+.landing-section-six {
+  background: #d4ebfa;
+}
+@media screen and (max-width: 1600px) {
+  .landingpage-top,
+  .landingpage-middle,
+  .landingpage-middle-second,
+  .landingpage-middle-third,
+  .landingpage-middle-forth,
+  .landingpage-middle-fifth {
+    margin: 0 250px;
+  }
+  .landingpage-middle-second,
+  .landingpage-middle-third {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .landingpage-top,
+  .landingpage-middle,
+  .landingpage-middle-second,
+  .landingpage-middle-third,
+  .landingpage-middle-forth,
+  .landingpage-middle-fifth {
+    margin: 0 100px;
+  }
+
+  .landingpage-middle h2 {
+    padding: 0;
+  }
+  .landing-cardDiv {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .landingpage-top {
+    flex-direction: column;
+  }
+  .landing-left h2 {
+    font-size: 40px;
+  }
+  .middle-right-fifth img {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .middle-right-fifth img {
+    width: 300px;
+  }
+  .landing-left h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .landingpage-top,
+  .landingpage-middle,
+  .landingpage-middle-second,
+  .landingpage-middle-third,
+  .landingpage-middle-forth,
+  .landingpage-middle-fifth {
+    margin: 0 50px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .landingpage-top,
+  .landingpage-middle,
+  .landingpage-middle-second,
+  .landingpage-middle-third,
+  .landingpage-middle-forth,
+  .landingpage-middle-fifth {
+    margin: 0 10px;
+  }
+}

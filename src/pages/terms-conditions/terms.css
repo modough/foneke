@@ -1,0 +1,26 @@
+.terms {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 150px 400px 50px;
+}
+.terms-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1600px) {
+  .terms {
+    padding: 150px 250px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .terms {
+    padding: 150px 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .terms {
+    padding: 150px 50px;
+  }
+}

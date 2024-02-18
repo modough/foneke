@@ -1,0 +1,69 @@
+.landingpage-middle-forth-card,
+.landingpage-middle-card,
+.mission-steps-card,
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 10px;
+  height: 250px;
+  width: 255px;
+  box-shadow: 6px 14px 34px -8px rgba(207, 173, 255, 0.65);
+  -webkit-box-shadow: 6px 14px 34px -8px rgba(207, 173, 255, 0.65);
+  -moz-box-shadow: 6px 14px 34px -8px rgba(207, 173, 255, 0.65);
+}
+.landingpage-middle-forth-card,
+.mission-steps-card {
+  box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -webkit-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -moz-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+}
+.mission-steps-card {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+  background-color: var(--light-blue);
+}
+
+.mission-steps-card p {
+  font-weight: bold;
+  font-size: 17px;
+}
+.mission-steps-card .card-top h3 {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--orange);
+  letter-spacing: 1px;
+}
+.mission-steps-card .card-bottom p {
+  color: #fff;
+  letter-spacing: 1px;
+}
+.mission-steps-card .card-top {
+  gap: 0;
+}
+.mission-steps-card .card-bottom {
+  flex-wrap: nowrap;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.card-bottom {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.landingpage-middle-forth-card .card-top {
+  flex-direction: column;
+}
+.landingpage-middle-forth-card .card-top img {
+  width: 120px;
+}
+.landingpage-middle-card .card-top img {
+  width: 50px;
+}

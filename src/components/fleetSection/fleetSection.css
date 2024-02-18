@@ -1,0 +1,13 @@
+@media screen and (max-width: 1000px) {
+  .middle-left-fifth .loginBtn {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .middle-left-fifth h2 {
+    font-size: 26px;
+  }
+  .middle-left-fifth .loginBtn {
+    width: 50%;
+  }
+}

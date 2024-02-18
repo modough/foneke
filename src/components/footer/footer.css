@@ -1,0 +1,41 @@
+.footer {
+  background-color: var(--dark-blue);
+}
+.footerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 0;
+  margin: 0 400px;
+}
+.links a,
+.links p {
+  color: #fff;
+}
+.links p {
+  margin-top: 20px;
+}
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.social img {
+  cursor: pointer;
+}
+@media screen and (max-width: 1400px) {
+  .footerDiv {
+    margin: 0 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footerDiv {
+    margin: 0 50px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .footerDiv {
+    margin: 0 10px;
+  }
+}

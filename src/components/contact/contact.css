@@ -1,0 +1,36 @@
+.contact {
+  padding: 200px 0;
+}
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin: 0 400px;
+}
+.contact-wrapper img {
+  width: 100px;
+}
+.contact-wrapper .card-bottom {
+  gap: 20px;
+}
+.card-description {
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+@media screen and (max-width: 1600px) {
+  .contact-wrapper {
+    margin: 0 250px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .contact-wrapper {
+    margin: 0 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact-wrapper {
+    margin: 0 50px;
+  }
+}

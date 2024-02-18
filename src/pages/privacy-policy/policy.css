@@ -1,0 +1,37 @@
+.policy {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 150px 400px 50px;
+}
+
+.policy-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.policy-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.policy-details .list {
+  list-style-type: square;
+}
+
+@media screen and (max-width: 1600px) {
+  .policy {
+    padding: 150px 250px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .policy {
+    padding: 150px 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .policy {
+    padding: 150px 50px;
+  }
+}

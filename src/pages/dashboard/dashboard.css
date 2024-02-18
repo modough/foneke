@@ -1,0 +1,95 @@
+.dashboard {
+  width: 100%;
+  padding: 200px 0;
+}
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 0 400px;
+}
+.dashboard-title h2 {
+  color: var(--orange);
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.stats-top,
+.stats-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.client-card,
+.vehicles-card,
+.subscribers-card,
+.renewal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid lightgray;
+  height: 100px;
+}
+.client-card p,
+.vehicles-card p,
+.subscribers-card p,
+.renewal-card p {
+  font-size: 40px;
+  color: var(--light-blue);
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-title h3 {
+  font-size: 15px;
+  font-weight: normal;
+}
+.topClient-card,
+.vehicleType-card,
+.renewedClient-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid lightgray;
+  height: 300px;
+}
+.topClient-List {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.topClient-List h4 {
+  color: var(--light-blue);
+  font-weight: normal;
+  font-size: 15px;
+}
+.topClient-List p {
+  font-size: 10px;
+}
+@media screen and (max-width: 1600px) {
+  .dashboard-wrapper {
+    margin: 0 250px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .dashboard-wrapper {
+    margin: 0 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dashboard-wrapper {
+    margin: 0 50px;
+  }
+}
