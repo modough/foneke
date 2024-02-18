@@ -9,6 +9,7 @@ import app from '../../assets/Mobile.png';
 import RealTime from '../../assets/RealTime.png';
 import Reporting from '../../assets/Reporting.png';
 import FleetSection from '../fleetSection/FleetSection';
+import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
 
 
 
@@ -23,7 +24,7 @@ const Functionalities = () => {
     }
 
     return (
-        <>
+        <HeaderFooterLayout>
             <section className='functionalities'>
                 <div className='functionalities-wrapper'>
                     <div className='title'>
@@ -63,7 +64,7 @@ const Functionalities = () => {
                 </div>
             </section>
             <FleetSection />
-        </>
+        </HeaderFooterLayout>
     )
 }
 

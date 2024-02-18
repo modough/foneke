@@ -1,3 +1,9 @@
 ul.recharts-default-legend {
   text-align: start !important;
 }
+
+@media screen and (max-width: 500px) {
+  .recharts-wrapper {
+    width: 100% !important;
+  }
+}

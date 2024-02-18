@@ -19,13 +19,20 @@
   color: var(--orange);
 }
 .disconnectDiv {
+  width: 250px;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: start;
   position: absolute;
   right: 0;
-  width: 220px;
+  padding: 10px;
+  box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -webkit-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -moz-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  opacity: 0.5;
 }
 .disconnectDiv button {
+  color: var(--dark-blue);
+  font-weight: bold;
   font-size: 15px;
 }

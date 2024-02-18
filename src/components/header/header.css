@@ -59,6 +59,7 @@
   cursor: pointer;
   padding: 5px 10px;
   border-radius: 5px;
+  color: var(--dark);
 }
 .headerList li:hover {
   color: #fff;
@@ -92,7 +93,7 @@
   outline: none;
 }
 .dashboard-headerBtns {
-  gap: 50px;
+  gap: 70px;
 }
 @media screen and (max-width: 1700px) {
   .headerBtns {

@@ -2,16 +2,17 @@ import './header.css';
 import logo from '../../assets/Foneke.png'
 import logoName from '../../assets/FonekeLogo.png'
 import burger from '../../assets/burger.svg'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UsernameDropdown from '../usernameDropdown/UsernameDropdown';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
     const path = typeof window !== 'undefined' && window.location.pathname;
-    console.log(path)
-    // Check if the current location is the dashboard page
-    const isDashboardPage = path === '/dashboard';
+
+    useEffect(() => {
+        path === '/dashboard';
+    }, [path])
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
@@ -22,7 +23,7 @@ const Header = () => {
                     <img src={logoName} alt="site logo" />
                     <img src={logo} alt="site logo" width={30} />
                 </Link>
-                {!isDashboardPage ?
+                {path !== '/dashboard' ?
                     <div className='headerBtns'>
                         <ul className='headerList'>
                             <Link to='/'>
@@ -48,7 +49,9 @@ const Header = () => {
                     </div> :
                     <div className='headerBtns dashboard-headerBtns'>
                         <ul className='headerList dashboard-headerList'>
-                            <li>Tableau de bord</li>
+                            <Link to='/dashboard'>
+                                <li>Tableau de bord</li>
+                            </Link>
                             <li>Entreprise</li>
                             <li>Dispositifs</li>
                             <li>Rôle</li>
@@ -66,7 +69,7 @@ const Header = () => {
                 }
                 <div className='headerBtns-mobile'>
                     <img className='burger' src={burger} alt='' width={40} onClick={handleClick} />
-                    {!isDashboardPage ?
+                    {path !== '/dashboard' ?
                         isOpen &&
                         <ul className='headerList mobile'>
                             <Link to='/'>

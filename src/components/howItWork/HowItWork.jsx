@@ -1,4 +1,5 @@
 import { howitworkData } from '../../data/howitworkData';
+import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
 import FleetSection from '../fleetSection/FleetSection';
 import './howItWork.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -8,7 +9,7 @@ const HowItWork = () => {
 
 
     return (
-        <>
+        <HeaderFooterLayout>
             <section className='howitwork'>
                 <div className='howitwork-wrapper'>
                     <div className='title'>
@@ -40,7 +41,7 @@ const HowItWork = () => {
                 </div>
             </section>
             <FleetSection />
-        </>
+        </HeaderFooterLayout>
     )
 }
 

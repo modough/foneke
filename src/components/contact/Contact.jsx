@@ -4,10 +4,11 @@ import './contact.css';
 import phone from '../../assets/call.svg'
 import mail from '../../assets/mail.svg'
 import address from '../../assets/address.svg'
+import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
 
 const Contact = () => {
     return (
-        <>
+        <HeaderFooterLayout>
             <section className='contact'>
                 <ul className='contact-wrapper'>
                     <Card
@@ -34,7 +35,7 @@ const Contact = () => {
                 </ul>
             </section>
             <FleetSection />
-        </>
+        </HeaderFooterLayout>
     )
 }
 

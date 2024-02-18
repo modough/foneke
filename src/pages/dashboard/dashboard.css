@@ -88,6 +88,10 @@
   .dashboard-wrapper {
     margin: 0 100px;
   }
+  .stats-bottom,
+  .stats-top {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 500px) {

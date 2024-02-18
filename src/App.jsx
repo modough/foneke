@@ -1,10 +1,9 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Header from './components/header/Header'
-import Home from './pages/home/Home'
+
 import ErrorPage from './pages/error/ErrorPage'
 import Landing from './pages/landing/Landing'
-import Footer from './components/footer/Footer'
+
 import Policy from './pages/privacy-policy/Policy'
 import Login from './pages/login/Login'
 import About from './pages/about/About'
@@ -17,12 +16,9 @@ import Terms from './pages/terms-conditions/Terms'
 import Legales from './pages/legales/Legales'
 
 function App() {
-
-
-
   return (
     <Router>
-      <Header />
+
       <Routes>
         <Route
           path='/'
@@ -53,10 +49,6 @@ function App() {
           element={<PasswordReset />}
         />
         <Route
-          path='/homepage'
-          element={<Home />}
-        />
-        <Route
           path='/dashboard'
           element={<Dashboard />}
         />
@@ -65,7 +57,7 @@ function App() {
         <Route path='/legales' element={<Legales />} />
         <Route path='/terms-and-conditions' element={<Terms />} />
       </Routes>
-      <Footer />
+
     </Router>
   )
 }

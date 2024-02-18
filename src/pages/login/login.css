@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   gap: 150px;
-  padding: 200px 400px 10px;
+  padding: 200px 400px 50px;
 }
 .form {
   padding: 50px;
@@ -64,5 +64,18 @@
     flex-direction: column-reverse;
     padding: 150px 50px;
     gap: 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .loginImg img {
+    width: 300px;
+  }
+  .input-wrapper input {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .input-wrapper input {
+    width: 200px;
   }
 }

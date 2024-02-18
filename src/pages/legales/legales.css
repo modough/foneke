@@ -1,8 +1,10 @@
 .legales {
+  height: 100dvh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 30px;
-  padding: 150px 400px 50px;
+  padding: 0px 400px;
 }
 
 .legales-title {

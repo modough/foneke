@@ -111,7 +111,7 @@ button.titleBtn:focus {
   gap: 20px;
 }
 .functionalies-cards > div img {
-  width: 100%;
+  min-width: 100%;
 }
 
 @media screen and (max-width: 1600px) {
