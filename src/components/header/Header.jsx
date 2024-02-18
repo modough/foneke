@@ -4,6 +4,7 @@ import logoName from '../../assets/FonekeLogo.png'
 import burger from '../../assets/burger.svg'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import UsernameDropdown from '../usernameDropdown/UsernameDropdown';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -45,19 +46,22 @@ const Header = () => {
                             <Link to='/login'>Se connecter</Link>
                         </button>
                     </div> :
-                    <div className='headerBtns'>
+                    <div className='headerBtns dashboard-headerBtns'>
                         <ul className='headerList dashboard-headerList'>
                             <li>Tableau de bord</li>
                             <li>Entreprise</li>
                             <li>Dispositifs</li>
                             <li>Rôle</li>
                         </ul>
-                        <select>
-                            <option>Français</option>
-                            <option>English</option>
-                        </select>
-                        <img src='' className='avatar' alt='' />
-                        <p>User Name</p>
+                        <div className='select'>
+                            🌐
+                            <select >
+                                <option>Français</option>
+                                <option>English</option>
+                            </select>
+                        </div>
+                        <img className='avatar' src='' alt='' />
+                        <UsernameDropdown />
                     </div>
                 }
                 <div className='headerBtns-mobile'>

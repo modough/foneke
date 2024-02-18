@@ -34,6 +34,7 @@
   justify-content: space-between;
   padding: 10px;
   border: 1px solid lightgray;
+  border-radius: 5px;
   height: 100px;
 }
 .client-card p,
@@ -62,6 +63,7 @@
   justify-content: space-between;
   padding: 15px;
   border: 1px solid lightgray;
+  border-radius: 5px;
   height: 300px;
 }
 .topClient-List {

@@ -1,0 +1,31 @@
+.username {
+  position: relative;
+}
+.username button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.down {
+  rotate: 180deg;
+}
+.usernameBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+}
+.usernameBtn:hover {
+  color: var(--orange);
+}
+.disconnectDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: absolute;
+  right: 0;
+  width: 220px;
+}
+.disconnectDiv button {
+  font-size: 15px;
+}

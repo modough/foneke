@@ -21,6 +21,9 @@
   margin: 0;
   padding: 0;
 }
+*:focus {
+  outline: 0 !important;
+}
 a {
   font-weight: 500;
   color: #fff;
