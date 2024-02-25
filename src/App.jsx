@@ -14,13 +14,16 @@ import PasswordReset from './pages/passwordReset/PasswordReset'
 import Dashboard from './pages/dashboard/Dashboard'
 import Terms from './pages/terms-conditions/Terms'
 import Legales from './pages/legales/Legales'
-import Table from './components/table/Table'
 import Register from './pages/register/Register'
+import VerifyEmail from './pages/verifyEmail/VerifyEmail'
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+import Entreprise from './pages/entreprise/Entreprise'
 
 function App() {
   return (
     <Router>
-
+      <Header />
       <Routes>
         <Route
           path='/'
@@ -51,23 +54,27 @@ function App() {
           element={<Login />}
         />
         <Route
+          path='/verify-email'
+          element={<VerifyEmail />}
+        />
+        <Route
           path='/reset-password'
           element={<PasswordReset />}
         />
         <Route
-          path='/admin/dashboard'
+          path='/dashboard'
           element={<Dashboard />}
         />
         <Route
-          path='/admin/entreprise'
-          element={<Table />}
+          path='/entreprise'
+          element={<Entreprise />}
         />
         <Route path='*' element={<ErrorPage />} />
         <Route path='/privacy-policy' element={<Policy />} />
         <Route path='/legales' element={<Legales />} />
         <Route path='/terms-and-conditions' element={<Terms />} />
       </Routes>
-
+      <Footer />
     </Router>
   )
 }

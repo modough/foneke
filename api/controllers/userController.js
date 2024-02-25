@@ -1,4 +1,4 @@
-import playerModel from '../models/userModel.js';
+import userModel from '../models/userModel.js';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import crypto from 'crypto'
@@ -9,20 +9,20 @@ import sendVerifyEmail from '../utils/sendVerifyEmail.js';
 export const register = async (req, res) => {
     const { pseudo, email, password, confirmPassword } = req.body
     try {
-        let player = await playerModel.findOne({ email, pseudo });
-        if (player) return res.status(400).json('Player already exists');
-        player = new playerModel({
+        let user = await userModel.findOne({ email, pseudo });
+        if (user) return res.status(400).json('user already exists');
+        user = new userModel({
             pseudo,
             email,
             password: await bcrypt.hash(password, 10),
             emailToken: crypto.randomBytes(64).toString("hex"),
         });
-        if (!pseudo || !email || !password) return res.status(400).json({ error: "all fields are required..." });
-        if (password !== confirmPassword) return res.status(400).json({ error: "password and confirm password does not match" });
-        if (!validator.isEmail(email)) return res.status(400).json({ error: "Must be a valid email..." });
-        if (!validator.isStrongPassword(password)) return res.status(400).json({ error: "Must be a strong password..." });
-        const body = await player.save();
-        sendVerifyEmail(player);
+        if (!pseudo || !email || !password) return res.status(400).json({ message: "all fields are required..." });
+        if (password !== confirmPassword) return res.status(400).json({ message: "password and confirm password does not match" });
+        if (!validator.isEmail(email)) return res.status(400).json({ message: "Must be a valid email..." });
+        if (!validator.isStrongPassword(password)) return res.status(400).json({ message: "Must be a strong password..." });
+        const body = await user.save();
+        sendVerifyEmail(user);
         return res.status(200).json({ body });
     }
     catch (error) { res.status(500).json({ error }) }
@@ -30,25 +30,25 @@ export const register = async (req, res) => {
 
 
 export const login = async (req, res) => {
-    const { pseudo } = req.body;
-    console.log(pseudo)
-    await playerModel.findOne({ pseudo })
-        .then(player => {
-            console.log(player)
-            if (!player) {
-                return res.status(401).json({ error: 'player not found !' });
+    const { email, password } = req.body;
+    console.log(email)
+    await userModel.findOne({ email })
+        .then(user => {
+            console.log(user)
+            if (!user) {
+                return res.status(401).json('user not found !');
             }
-            bcrypt.compare(req.body.password, player.password)
+            bcrypt.compare(password, user.password)
                 .then(valid => {
                     if (!valid) {
-                        return res.status(401).json({ error: 'Wrong password !' });
+                        return res.status(401).json('Wrong password !');
                     }
                     res.status(200).json({
-                        playerId: player._id,
-                        pseudo: player.pseudo,
-                        email: player.email,
+                        userId: user._id,
+                        pseudo: user.pseudo,
+                        email: user.email,
                         token: jwt.sign(
-                            { playerId: player._id },
+                            { userId: user._id },
                             'RANDOM_TOKEN_SECRET',
                             { expiresIn: '24h' }
                         )
@@ -62,13 +62,13 @@ export const updateUser = async (req, res) => {
     try {
         const { email, password, confirmPassword } = req.body;
 
-        const player = await playerModel.findOneAndUpdate({ email }, {
+        const user = await userModel.findOneAndUpdate({ email }, {
             password: await bcrypt.hash(password, 10)
         }, { new: true })
-        if (!player) return res.status(400).json('Not in our database')
-        if (!email || !confirmPassword || !password) return res.status(400).json("all fields are required...");
-        if (password !== confirmPassword) return res.status(400).json("password and confirm password does not match");
-        return res.status(200).json({ player })
+        if (!user) return res.status(400).json('Not in our database')
+        if (!email || !confirmPassword || !password) return res.status(400).json({ message: "all fields are required..." });
+        if (password !== confirmPassword) return res.status(400).json({ message: "password and confirm password does not match" });
+        return res.status(200).json({ user })
     } catch (error) {
         res.status(500).json({ error })
     }
@@ -77,22 +77,22 @@ export const updateUser = async (req, res) => {
 export const verifyEmail = async (req, res) => {
     const { emailToken } = req.body;
     try {
-        if (!emailToken) return res.status(404).json('EmailToken not found...');
-        const player = await playerModel.findOne({ emailToken });
-        if (player) {
-            player.emailToken = null;
-            player.isVerify = true;
-            await player.save();
+        if (!emailToken) return res.status(404).json({ message: 'EmailToken not found...' });
+        const user = await userModel.findOne({ emailToken });
+        if (user) {
+            user.emailToken = null;
+            user.isVerify = true;
+            await user.save();
             res.status(200).json({
-                _id: player._id,
-                pseudo: player.pseudo,
-                email: player.email,
-                isVerify: player?.isVerify,
+                userId: user._id,
+                pseudo: user.pseudo,
+                email: user.email,
+                isVerify: user.isVerify,
             });
         }
-        else res.status(404).json("Email validation error, invalid token!")
+        else res.status(404).json({ message: "Email validation error, invalid token!" })
     } catch (error) {
         console.log(error)
-        res.status(500).json(error.message)
+        res.status(500).json({ error })
     }
 }

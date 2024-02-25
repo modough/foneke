@@ -40,17 +40,13 @@ const authSlice = createSlice({
             .addCase(loginUser.fulfilled, (state, action) => {
                 console.log(action)
                 state.token = action.payload.token
-                state.pseudo = action.payload.pseudo
                 state.email = action.payload.email
-                state.id = action.payload.playerid
                 state.token = action.payload.token
                 state.isVerify = action.payload.isVerify
-                state.error = action.payload.error
+                state.error = action.payload.message
             })
-            .addCase(loginUser.rejected, (state) => {
-                state.token = null;
-                state.pseudo = null;
-                state.id = null;
+            .addCase(loginUser.rejected, () => {
+                return initialState
             })
     }
 });

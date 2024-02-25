@@ -12,7 +12,7 @@ const fetchWrapper = async (url, options) => {
 };
 
 // Action creator for registering a player
-export const registerUser = createAsyncThunk('registerPlayer', async (registerInfos) => {
+export const registerUser = createAsyncThunk('registerUser', async (registerInfos) => {
     return fetchWrapper(`${serverUrl}/register`, {
         method: 'POST',
         headers: {
@@ -23,13 +23,22 @@ export const registerUser = createAsyncThunk('registerPlayer', async (registerIn
 });
 
 // Action creator for logging in a player
-export const loginUser = createAsyncThunk('loginPlayer', async (loginInfos) => {
+export const loginUser = createAsyncThunk('loginUser', async (loginInfos) => {
     return fetchWrapper(`${serverUrl}/login`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(loginInfos)
+    });
+});
+export const updateUser = createAsyncThunk('loginUser', async (updateInfos) => {
+    return fetchWrapper(`${serverUrl}/update`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updateInfos)
     });
 });
 

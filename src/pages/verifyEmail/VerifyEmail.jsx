@@ -1,8 +1,20 @@
-import './verifyEmail.css'
+import { useEffect } from 'react';
+import './verifyEmail.css';
+import { Link, useSearchParams } from 'react-router-dom';
+import { verifyEmail } from '../../features/fetchLocalApi';
 
-const VerifyEmail = () => {
+
+function VerifyEmail() {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const emailToken = searchParams.get('emailToken');
+    useEffect(() => {
+        verifyEmail(emailToken)
+    }, [])
     return (
-        <div>VerifyEmail</div>
+        <section className='verifyEmail'>
+            <p>Nous vous confirmons que votre compte a bien été validé</p>
+            <Link className='linkToLogin' to='/login'>Cliquez ici pour vous connecter</Link>
+        </section>
     )
 }
 

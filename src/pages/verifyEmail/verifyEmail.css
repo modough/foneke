@@ -1,0 +1,29 @@
+.verifyEmail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 250px 0;
+  background-image: url(/src/assets/bg.webp);
+}
+.verifyEmail p {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 24px;
+}
+.linkToLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--blue);
+  color: var(--black);
+}
+.linkToLogin:hover {
+  background-color: var(--white);
+  box-shadow: 0px 0px 5px 5px rgba(0, 255, 255, 0.7);
+}

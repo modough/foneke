@@ -57,13 +57,13 @@
 .headerList li {
   font-weight: bold;
   cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
   color: var(--dark);
 }
 .headerList li:hover {
   color: #fff;
-  background-color: var(--light-blue);
+  background-color: var(--dark-blue);
 }
 .headerList li::first-letter {
   text-transform: capitalize;

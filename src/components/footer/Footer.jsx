@@ -3,14 +3,15 @@ import './footer.css';
 import insta from '../../assets/inst.svg'
 import fb from '../../assets/fb.svg'
 import twitter from '../../assets/x.svg'
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
-    const path = typeof window !== 'undefined' && window.location.pathname;
-    console.log(path)
-    // Check if the current location is the dashboard page
-    const isAdminPage = path.includes('/admin');
+    const { token } = useSelector((state) =>
+        state.userReducer
+    )
     return (
-        !isAdminPage && <section className='footer'>
+        !token &&
+        <section className='footer'>
             <div className='footerDiv'>
                 <div className='links'>
                     <Link to='/terms-and-conditions'>Termes et conditions |</Link>

@@ -43,7 +43,7 @@ const Table = () => {
                         placeholder="Filter..."
                     />
                 </div>
-                <table style={{ minWidth: '50rem', borderCollapse: 'collapse', width: '100%' }}>
+                <table >
                     <thead>
                         <tr style={{ backgroundColor: '#f2f2f2' }}>
                             <th>Nom</th>

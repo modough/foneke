@@ -2,15 +2,39 @@ import { useState } from 'react';
 import Input from '../../components/input/Input';
 import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import signin from '../../assets/signin.svg';
 import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
+import { loginUser } from '../../features/fetchLocalApi';
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
     const navigate = useNavigate()
-    const handleSignin = () => { navigate('/admin/dashboard') }
+    const dispatch = useDispatch()
+    const { error } = useSelector((state) =>
+        state.userReducer
+    )
+    const handleSignin = async (e) => {
+        e.preventDefault()
+        let loginInfos = { email, password }
+        await dispatch(loginUser(loginInfos)).then((action) => {
+            console.log(action)
+            if (action.payload) {
+                setEmail('');
+                setPassword('');
+                navigate('/dashboard')
+            } else {
+                console.log('error')
+            }
+        });
+    }
+    const handleError = () => {
+        if (error === 'Wrong password !') return 'Votre mot de passe ne correspond pas !'
+        if (error === 'player not found !') return 'Utilisateur inconnu !'
+    }
+
+
     return (
         <HeaderFooterLayout>
             <section className='login'>
@@ -42,7 +66,7 @@ const Login = () => {
                                 Connecter
                             </button>
                             <div className="error-alert" role='alert'>
-                                {error ? <p className="error">{error}</p> : ''}
+                                <p className="error">{handleError()}</p>
                             </div>
                             <Link to='/signup'>
                                 <p className="signup-text">Pas de compte? Enregistrez-vous</p>

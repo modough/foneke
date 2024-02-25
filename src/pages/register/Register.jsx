@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './register.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
 import Input from '../../components/input/Input';
 import signup from '../../assets/signup.svg';
 import { registerUser } from '../../features/fetchLocalApi';
+import Modal from '../../components/modal/Modal';
 
 const Register = () => {
     const [pseudo, setPseudo] = useState('')

@@ -1,0 +1,22 @@
+.modal {
+  position: absolute;
+  width: 500px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 0px 0px 5px 5px rgba(0, 255, 255, 0.7);
+}
+.closeModal {
+  font-weight: bolder;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: var(--orange);
+  padding: 4px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.closeModal:hover {
+  color: var(--white);
+}

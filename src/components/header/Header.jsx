@@ -2,20 +2,20 @@ import './header.css';
 import logo from '../../assets/Foneke.png'
 import logoName from '../../assets/FonekeLogo.png'
 import burger from '../../assets/burger.svg'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import UsernameDropdown from '../usernameDropdown/UsernameDropdown';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const path = typeof window !== 'undefined' && window.location.pathname;
-
-    useEffect(() => {
-        path.includes('/admin');
-    }, [path])
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
+    const { token } = useSelector((state) =>
+        state.userReducer
+    )
+
     return (
         <section className='header'>
             <div className='header-wrapper'>
@@ -23,7 +23,7 @@ const Header = () => {
                     <img src={logoName} alt="site logo" />
                     <img src={logo} alt="site logo" width={30} />
                 </Link>
-                {!path.includes('/admin') ?
+                {!token ?
                     <div className='headerBtns'>
                         <ul className='headerList'>
                             <Link to='/'>
@@ -49,10 +49,10 @@ const Header = () => {
                     </div> :
                     <div className='headerBtns dashboard-headerBtns'>
                         <ul className='headerList dashboard-headerList'>
-                            <Link to='/admin/dashboard'>
+                            <Link to='/dashboard'>
                                 <li>Tableau de bord</li>
                             </Link>
-                            <Link to='/admin/entreprise'>
+                            <Link to='/entreprise'>
                                 <li>Entreprise</li>
                             </Link>
                             <li>Dispositifs</li>
@@ -71,7 +71,7 @@ const Header = () => {
                 }
                 <div className='headerBtns-mobile'>
                     <img className='burger' src={burger} alt='' width={40} onClick={handleClick} />
-                    {!path.includes('/admin') ?
+                    {!token ?
                         isOpen &&
                         <ul className='headerList mobile'>
                             <Link to='/'>
