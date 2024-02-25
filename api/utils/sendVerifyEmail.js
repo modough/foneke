@@ -10,13 +10,13 @@ function sendVerifyEmail(player) {
         html: `<p>Salut ${player.pseudo}, valides ton inscription en cliquant sur ce lien ...</p>
         <a href="${process.env.URL}/verify-email?emailToken=${player.emailToken}">Verification Link</a>`,
     };
-    transporter.sendMail(mailInfos, (error, info) => {
+    transporter.sendMail(mailInfos, (error) => {
         if (error) {
             console.log(error);
         } else {
             console.log('Verification email sent')
         }
     });
-};
+}
 
 export default sendVerifyEmail

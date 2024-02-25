@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
-import 'dotenv/config';
+
+
+
 
 
 const dbConnection = async () => {
-    const databaseUrl = `mongodb+srv://mouhamedmbaye1:${process.env.MONGODB_PASSWORD}@cluster0.ytzghfb.mongodb.net/`
+    const databaseUrl = `${process.env.DB_URL}`;
     try {
         await mongoose.connect(
             databaseUrl,

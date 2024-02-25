@@ -14,6 +14,8 @@ import PasswordReset from './pages/passwordReset/PasswordReset'
 import Dashboard from './pages/dashboard/Dashboard'
 import Terms from './pages/terms-conditions/Terms'
 import Legales from './pages/legales/Legales'
+import Table from './components/table/Table'
+import Register from './pages/register/Register'
 
 function App() {
   return (
@@ -41,6 +43,10 @@ function App() {
           element={<Functionalities />}
         />
         <Route
+          path='/signup'
+          element={<Register />}
+        />
+        <Route
           path='/login'
           element={<Login />}
         />
@@ -49,8 +55,12 @@ function App() {
           element={<PasswordReset />}
         />
         <Route
-          path='/dashboard'
+          path='/admin/dashboard'
           element={<Dashboard />}
+        />
+        <Route
+          path='/admin/entreprise'
+          element={<Table />}
         />
         <Route path='*' element={<ErrorPage />} />
         <Route path='/privacy-policy' element={<Policy />} />

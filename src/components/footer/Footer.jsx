@@ -8,9 +8,9 @@ const Footer = () => {
     const path = typeof window !== 'undefined' && window.location.pathname;
     console.log(path)
     // Check if the current location is the dashboard page
-    const isDashboardPage = path === '/dashboard';
+    const isAdminPage = path.includes('/admin');
     return (
-        !isDashboardPage && <section className='footer'>
+        !isAdminPage && <section className='footer'>
             <div className='footerDiv'>
                 <div className='links'>
                     <Link to='/terms-and-conditions'>Termes et conditions |</Link>

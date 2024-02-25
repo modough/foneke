@@ -1,4 +1,4 @@
-import playerModel from '../models/playerModel.js';
+import playerModel from '../models/userModel.js';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import crypto from 'crypto'
@@ -6,7 +6,7 @@ import validator from 'validator';
 import sendVerifyEmail from '../utils/sendVerifyEmail.js';
 
 
-export const register = async (req, res, next) => {
+export const register = async (req, res) => {
     const { pseudo, email, password, confirmPassword } = req.body
     try {
         let player = await playerModel.findOne({ email, pseudo });
@@ -25,11 +25,11 @@ export const register = async (req, res, next) => {
         sendVerifyEmail(player);
         return res.status(200).json({ body });
     }
-    catch (error) { res.status(500).json({ error }) };
+    catch (error) { res.status(500).json({ error }) }
 };
 
 
-export const login = async (req, res, next) => {
+export const login = async (req, res) => {
     const { pseudo } = req.body;
     console.log(pseudo)
     await playerModel.findOne({ pseudo })
@@ -58,7 +58,7 @@ export const login = async (req, res, next) => {
         })
         .catch(error => res.status(500).json({ error }));
 };
-export const updatePlayer = async (req, res, next) => {
+export const updateUser = async (req, res) => {
     try {
         const { email, password, confirmPassword } = req.body;
 

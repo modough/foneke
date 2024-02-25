@@ -11,7 +11,7 @@ const Header = () => {
     const path = typeof window !== 'undefined' && window.location.pathname;
 
     useEffect(() => {
-        path === '/dashboard';
+        path.includes('/admin');
     }, [path])
     const handleClick = () => {
         setIsOpen(!isOpen)
@@ -23,7 +23,7 @@ const Header = () => {
                     <img src={logoName} alt="site logo" />
                     <img src={logo} alt="site logo" width={30} />
                 </Link>
-                {path !== '/dashboard' ?
+                {!path.includes('/admin') ?
                     <div className='headerBtns'>
                         <ul className='headerList'>
                             <Link to='/'>
@@ -49,10 +49,12 @@ const Header = () => {
                     </div> :
                     <div className='headerBtns dashboard-headerBtns'>
                         <ul className='headerList dashboard-headerList'>
-                            <Link to='/dashboard'>
+                            <Link to='/admin/dashboard'>
                                 <li>Tableau de bord</li>
                             </Link>
-                            <li>Entreprise</li>
+                            <Link to='/admin/entreprise'>
+                                <li>Entreprise</li>
+                            </Link>
                             <li>Dispositifs</li>
                             <li>Rôle</li>
                         </ul>
@@ -69,7 +71,7 @@ const Header = () => {
                 }
                 <div className='headerBtns-mobile'>
                     <img className='burger' src={burger} alt='' width={40} onClick={handleClick} />
-                    {path !== '/dashboard' ?
+                    {!path.includes('/admin') ?
                         isOpen &&
                         <ul className='headerList mobile'>
                             <Link to='/'>

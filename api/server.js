@@ -1,7 +1,9 @@
 import express, { json, urlencoded } from 'express'
 import cors from 'cors'
 import dbConnection from './database.js'
-import playerRoute from './routes/playerRoute.js'
+import userRoute from './routes/userRoute.js'
+import "dotenv/config.js";
+
 
 
 const app = express()
@@ -18,10 +20,10 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 
 // Handle custom routes
-app.use('/api', playerRoute)
+app.use('/api', userRoute)
 
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
     res.send('Connected to the server !')
 })
 

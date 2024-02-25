@@ -10,7 +10,7 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const navigate = useNavigate()
-    const handleSignin = () => { navigate('/dashboard'), { shallow: true } }
+    const handleSignin = () => { navigate('/admin/dashboard') }
     return (
         <HeaderFooterLayout>
             <section className='login'>
@@ -45,10 +45,10 @@ const Login = () => {
                                 {error ? <p className="error">{error}</p> : ''}
                             </div>
                             <Link to='/signup'>
-                                <p className="signup-text">Pas de compte? Enregistrer-vous</p>
+                                <p className="signup-text">Pas de compte? Enregistrez-vous</p>
                             </Link>
                             <Link to='/reset-password'>
-                                <p className="reset-text">Mot de passe oublié? Récuperer le ici</p>
+                                <p className="reset-text">Mot de passe oublié? Récuperez le ici</p>
                             </Link>
                         </form>
                     </div>
