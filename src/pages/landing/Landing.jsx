@@ -7,12 +7,12 @@ import singleFleet from '../../assets/Single_Fleet_Frame.png';
 import locationSvg from '../../assets/location.svg';
 import dashboard from '../../assets/dashboard.png';
 import FleetSection from '../../components/fleetSection/FleetSection';
-import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
+
 
 
 const Landing = () => {
     return (
-        <HeaderFooterLayout>
+        <>
             <section className='landingpage'>
                 <section className='landing-section-one'>
                     <article className='landingpage-top'>
@@ -109,7 +109,7 @@ const Landing = () => {
                 </section>
                 <FleetSection />
             </section>
-        </HeaderFooterLayout>
+        </>
     )
 }
 

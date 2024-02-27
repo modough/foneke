@@ -1,9 +1,9 @@
-import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
+
 import './legales.css';
 
 const Legales = () => {
     return (
-        <HeaderFooterLayout>
+        <>
             <section className='legales'>
                 <div className='legales-title'>
                     <h2>FoNéKe - Mentions Légales</h2>
@@ -32,7 +32,7 @@ const Legales = () => {
                     <p>Conformément à la Loi n° 78-17 du 6 janvier 1978 relative à l&#39;informatique, aux fichiers et aux libertés, vous disposez d&#39;un droit d&#39;accès, de rectification et de suppression des données vous concernant. Vous pouvez exercer ce droit en nous contactant à l&#39;adresse contact@foneke.com.</p>
                 </div>
             </section>
-        </HeaderFooterLayout>
+        </>
     )
 }
 

@@ -74,6 +74,7 @@ const Table = () => {
                         <button key={index} onClick={() => paginate(index + 1)}>
                             {index + 1}
                         </button>
+
                     ))}
                 </div>
             </div>

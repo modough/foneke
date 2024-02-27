@@ -2,12 +2,11 @@ import Card from '../../components/card/Card';
 import FleetSection from '../../components/fleetSection/FleetSection';
 import mission from '../../assets/mission (2).svg';
 import './about.css';
-import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
+
 
 const About = () => {
     return (
-
-        <HeaderFooterLayout>
+        <>
             <section className='about'>
                 <div className='about-wrapper'>
                     <div className='title'>
@@ -50,7 +49,7 @@ const About = () => {
                 </div>
             </section>
             <FleetSection />
-        </HeaderFooterLayout>
+        </>
 
     )
 }

@@ -19,47 +19,51 @@ import VerifyEmail from './pages/verifyEmail/VerifyEmail'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Entreprise from './pages/entreprise/Entreprise'
+import { useSelector } from "react-redux"
 
 function App() {
+  const { token } = useSelector((state) =>
+    state.userReducer
+  )
   return (
     <Router>
-      <Header />
+      {!token && <Header />}
       <Routes>
         <Route
           path='/'
-          element={<Landing />}
+          element={!token ? <Landing /> : <Dashboard />}
         />
         <Route
           path='/about'
-          element={<About />}
+          element={!token ? <About /> : <Dashboard />}
         />
         <Route
           path='/contact'
-          element={<Contact />}
+          element={!token ? <Contact /> : <Dashboard />}
         />
         <Route
           path='/how-it-works'
-          element={<HowItWork />}
+          element={!token ? <HowItWork /> : <Dashboard />}
         />
         <Route
           path='/functionalities'
-          element={<Functionalities />}
+          element={!token ? <Functionalities /> : <Dashboard />}
         />
         <Route
           path='/signup'
-          element={<Register />}
+          element={!token ? <Register /> : <Dashboard />}
         />
         <Route
           path='/login'
-          element={<Login />}
+          element={!token ? <Login /> : <Dashboard />}
         />
         <Route
           path='/verify-email'
-          element={<VerifyEmail />}
+          element={!token ? <VerifyEmail /> : <Dashboard />}
         />
         <Route
           path='/reset-password'
-          element={<PasswordReset />}
+          element={!token ? <PasswordReset /> : <Dashboard />}
         />
         <Route
           path='/dashboard'
@@ -70,11 +74,11 @@ function App() {
           element={<Entreprise />}
         />
         <Route path='*' element={<ErrorPage />} />
-        <Route path='/privacy-policy' element={<Policy />} />
-        <Route path='/legales' element={<Legales />} />
-        <Route path='/terms-and-conditions' element={<Terms />} />
+        <Route path='/privacy-policy' element={!token ? <Policy /> : <Dashboard />} />
+        <Route path='/legales' element={!token ? <Legales /> : <Dashboard />} />
+        <Route path='/terms-and-conditions' element={!token ? <Terms /> : <Dashboard />} />
       </Routes>
-      <Footer />
+      {!token && <Footer />}
     </Router>
   )
 }

@@ -4,7 +4,7 @@ import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import signin from '../../assets/signin.svg';
-import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
+
 import { loginUser } from '../../features/fetchLocalApi';
 
 const Login = () => {
@@ -36,7 +36,7 @@ const Login = () => {
 
 
     return (
-        <HeaderFooterLayout>
+        <>
             <section className='login'>
                 <div className='loginDiv'>
                     <div className='form'>
@@ -81,7 +81,7 @@ const Login = () => {
                     </div>
                 </div>
             </section>
-        </HeaderFooterLayout>
+        </>
     )
 }
 

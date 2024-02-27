@@ -1,6 +1,7 @@
 .username {
   position: relative;
 }
+
 .username button {
   background-color: transparent;
   border: none;
@@ -30,6 +31,14 @@
   -webkit-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
   -moz-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
   opacity: 0.5;
+}
+.username.mobile .disconnectDiv {
+  opacity: 1;
+  background-color: #fff;
+  width: 265px;
+  padding: 20px;
+  top: 59px;
+  right: -96px;
 }
 .disconnectDiv button {
   color: var(--dark-blue);

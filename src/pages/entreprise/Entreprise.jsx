@@ -1,11 +1,14 @@
 import Table from '../../components/table/Table';
+import AdminLayout from '../../utils/AdminLayout';
 import './entreprise.css';
 
 const Entreprise = () => {
     return (
-        <section>
-            <Table />
-        </section>
+        <AdminLayout>
+            <section>
+                <Table />
+            </section>
+        </AdminLayout>
     )
 }
 

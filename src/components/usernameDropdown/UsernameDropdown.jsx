@@ -5,16 +5,19 @@ import passwordSvg from '../../assets/password.svg';
 import logoutSvg from '../../assets/logout.svg';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../features/authSlice';
+import { useNavigate } from 'react-router-dom'
 
-const UsernameDropdown = () => {
+const UsernameDropdown = ({ open }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const handleLogout = () => {
         dispatch(logout())
+        navigate('/login')
     }
 
     return (
-        <section className='username'>
+        <section className={`${open ? 'mobile' : ''} username`}>
             <button className='usernameBtn' type="text" onClick={() => setIsOpen(!isOpen)}>
                 Username
                 <img className={`${!isOpen && 'down'}`} src={arrowSvg} alt="" width={15} />

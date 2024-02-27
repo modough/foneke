@@ -70,5 +70,41 @@ export const entrepriseData = [
         Téléphone: "444-789-1230",
         Status: "Active",
         Actions: "Edit/Delete"
+    },
+    {
+        Nom: "Bobby Brew",
+        Email: "bobby.brew@example.com",
+        Pays: "Australia",
+        Contact: "Bobby",
+        Téléphone: "444-789-1230",
+        Status: "Active",
+        Actions: "Edit/Delete"
+    },
+    {
+        Nom: "Bobby Brew",
+        Email: "bobby.brew@example.com",
+        Pays: "Australia",
+        Contact: "Bobby",
+        Téléphone: "444-789-1230",
+        Status: "Active",
+        Actions: "Edit/Delete"
+    },
+    {
+        Nom: "Bobby Brew",
+        Email: "bobby.brew@example.com",
+        Pays: "Australia",
+        Contact: "Bobby",
+        Téléphone: "444-789-1230",
+        Status: "Active",
+        Actions: "Edit/Delete"
+    },
+    {
+        Nom: "Bobby Brew",
+        Email: "bobby.brew@example.com",
+        Pays: "Australia",
+        Contact: "Bobby",
+        Téléphone: "444-789-1230",
+        Status: "Active",
+        Actions: "Edit/Delete"
     }
 ]

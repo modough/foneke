@@ -1,10 +1,9 @@
 import { policy } from '../../data/policyData';
-import HeaderFooterLayout from '../../utils/HeaderFooterLayout';
 import './policy.css';
 
 const Policy = () => {
     return (
-        <HeaderFooterLayout>
+        <>
             <section className='policy'>
                 <div className='policy-title'>
                     <h2>FoNéKe - Régles de confidentialité</h2>
@@ -35,7 +34,7 @@ const Policy = () => {
                     </div>
                 ))}
             </section>
-        </HeaderFooterLayout>
+        </>
     )
 }
 
