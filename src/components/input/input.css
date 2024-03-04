@@ -1,0 +1,8 @@
+.form form p.error{
+    color: red;
+    padding-top: 5px;
+    width: 350px;
+}
+.input-wrapper.error input{   
+    background: #fea8a8;
+}

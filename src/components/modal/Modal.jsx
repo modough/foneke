@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 
 function Modal({ action, text }) {
     return (
-        <div className='modal'>
-            <p className='closeModal' onClick={action}> x</p>
-            <p>{text}</p>
+        <div className='overlay'>
+            <div className='modal'>
+                <p className='closeModal' onClick={action}> x</p>
+                <p>{text}</p>
+            </div>
         </div>
     )
 }

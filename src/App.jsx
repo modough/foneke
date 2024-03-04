@@ -1,9 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 import ErrorPage from './pages/error/ErrorPage'
 import Landing from './pages/landing/Landing'
-
 import Policy from './pages/privacy-policy/Policy'
 import Login from './pages/login/Login'
 import About from './pages/about/About'

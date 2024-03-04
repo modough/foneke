@@ -1,6 +1,7 @@
 .register {
   background: var(--dark-blue);
 }
+
 .registerDiv {
   display: flex;
   flex-direction: row-reverse;
@@ -63,7 +64,7 @@
   .registerDiv {
     flex-direction: column-reverse;
     padding: 150px 50px;
-    gap: 50px;
+    gap: 0;
   }
 }
 @media screen and (max-width: 500px) {
@@ -73,9 +74,15 @@
   .input-wrapper input {
     width: 300px;
   }
+  .sign-in-button{
+    max-width: 300px;
+  }
 }
 @media screen and (max-width: 400px) {
   .input-wrapper input {
     width: 200px;
+  }
+  .sign-in-button{
+    max-width: 200px;
   }
 }

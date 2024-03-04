@@ -1,10 +1,28 @@
+.overlay {
+  position: fixed; /* Positioning and size */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(54, 53, 53, 0.5); /* color */
+  
+}
 .modal {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(5px);
   width: 500px;
   padding: 50px;
   border-radius: 10px;
-  background-color: var(--white);
-  box-shadow: 0px 0px 5px 5px rgba(0, 255, 255, 0.7);
+  background-color: var(--light-blue);
+  box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -webkit-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+  -moz-box-shadow: 6px 14px 34px -8px rgba(38, 114, 220, 0.65);
+}
+.modal p{
+  color: var(--white);
 }
 .closeModal {
   font-weight: bolder;
@@ -12,11 +30,23 @@
   position: absolute;
   right: 10px;
   top: 10px;
-  background-color: var(--orange);
   padding: 4px 10px;
   border-radius: 50%;
   cursor: pointer;
 }
 .closeModal:hover {
   color: var(--white);
+}
+
+@media screen and (max-width: 1000px) {
+  .modal {
+    max-width: 300px;
+   
+  }
+}
+@media screen and (max-width: 500px) {
+  .modal {
+    max-width: 100px;
+   
+  }
 }

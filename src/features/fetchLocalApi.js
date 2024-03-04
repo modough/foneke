@@ -5,22 +5,12 @@ const serverUrl = "http://localhost:3001/api";
 // Function to handle common fetch logic
 const fetchWrapper = async (url, options) => {
     const response = await fetch(url, options);
+    console.log(response)
     if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(response.status);
     }
     return response.json();
 };
-
-// Action creator for registering a player
-export const registerUser = createAsyncThunk('registerUser', async (registerInfos) => {
-    return fetchWrapper(`${serverUrl}/register`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(registerInfos)
-    });
-});
 
 // Action creator for logging in a player
 export const loginUser = createAsyncThunk('loginUser', async (loginInfos) => {

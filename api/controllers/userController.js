@@ -10,17 +10,18 @@ export const register = async (req, res) => {
     const { pseudo, email, password, confirmPassword } = req.body
     try {
         let user = await userModel.findOne({ email, pseudo });
-        if (user) return res.status(400).json('user already exists');
+        if (user) return res.status(400).json({ message: 'user already exists' });
         user = new userModel({
             pseudo,
             email,
             password: await bcrypt.hash(password, 10),
             emailToken: crypto.randomBytes(64).toString("hex"),
         });
-        if (!pseudo || !email || !password) return res.status(400).json({ message: "all fields are required..." });
+        if (pseudo.length < 3) return res.status(400).json({ message: "shorter than the minimum allowed length" });
+        if (!pseudo || !email || !password) return res.status(400).json({ message: "all fields are required" });
         if (password !== confirmPassword) return res.status(400).json({ message: "password and confirm password does not match" });
-        if (!validator.isEmail(email)) return res.status(400).json({ message: "Must be a valid email..." });
-        if (!validator.isStrongPassword(password)) return res.status(400).json({ message: "Must be a strong password..." });
+        if (!validator.isEmail(email)) return res.status(400).json({ message: "Must be a valid email" });
+        if (!validator.isStrongPassword(password)) return res.status(400).json({ message: "Must be a strong password" });
         const body = await user.save();
         sendVerifyEmail(user);
         return res.status(200).json({ body });
@@ -41,7 +42,7 @@ export const login = async (req, res) => {
             bcrypt.compare(password, user.password)
                 .then(valid => {
                     if (!valid) {
-                        return res.status(401).json('Wrong password !');
+                        return res.status(402).json('Wrong password !');
                     }
                     res.status(200).json({
                         userId: user._id,

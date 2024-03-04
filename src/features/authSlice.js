@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser, registerUser, verifyEmail } from "./fetchLocalApi";
+import { loginUser, verifyEmail } from "./fetchLocalApi";
 
 
 
@@ -17,16 +17,6 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        createUser: (registerUser, (state, action) => {
-            const { pseudo, email, _id, isVerify, emailToken } = action.payload
-            state.pseudo = pseudo
-            state.email = email
-            state.id = _id
-            state.isVerify = isVerify
-            state.emailToken = emailToken
-            state.isLoading = true
-
-        }),
         logout: () => {
             return initialState
         },
@@ -52,5 +42,5 @@ const authSlice = createSlice({
 });
 
 
-export const { createUser, logout, login, updateUser } = authSlice.actions
+export const { logout, login, updateUser } = authSlice.actions
 export default authSlice.reducer;
